@@ -1,2 +1,3 @@
-# AndroidIPC
-Android进程间通信方式
+# Android间跨进程的通信方式,欢迎大家访问我的博客
+##http://androidmst.com
+
