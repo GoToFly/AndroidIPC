@@ -1,4 +1,4 @@
-package com.horry.myapplication
+package com.horry.myapplication.messenger
 
 import android.content.Context
 import android.content.Intent
@@ -11,6 +11,7 @@ import android.os.Messenger
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import com.horry.myapplication.R
 
 /**
  *
@@ -18,7 +19,7 @@ import android.widget.Button
  * 从而使Service可以通过Messenger向Activity发送消息
  * @param connection 链接的桥梁
  */
-class Main4Activity : AppCompatActivity() {
+class MessengerActivity : AppCompatActivity() {
 
     var connection: MessengerConnection? = null;
 
@@ -26,7 +27,7 @@ class Main4Activity : AppCompatActivity() {
         override fun handleMessage(msg: Message?): Boolean {
             when (msg!!.what) {
                 1 -> {
-                    Log.d("Main4Activity", "Receive Msg");
+                    Log.d("MessengerActivity", "Receive Msg");
                 }
                 else -> {
                 }

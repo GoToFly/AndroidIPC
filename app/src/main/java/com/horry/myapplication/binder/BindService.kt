@@ -1,9 +1,10 @@
-package com.horry.myapplication
+package com.horry.myapplication.binder
 
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
 import android.util.Log
+import com.horry.myapplication.MyBinder
 
 class BindService : Service() {
     var binder: MyBinder? = null;

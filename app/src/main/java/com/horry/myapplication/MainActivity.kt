@@ -11,23 +11,25 @@ import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
+import com.horry.myapplication.aidl.AidlTestActivity
+import com.horry.myapplication.binder.IBinderActivity
+import com.horry.myapplication.messenger.MessengerActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.*
 
 class MainActivity : AppCompatActivity() {
-    var alphaAnimation: Animation? = null;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        alphaAnimation = AnimationUtils.loadAnimation(this, R.anim.trans) as Animation?;
-        alphaAnimation!!.duration = 1000;
-        alphaAnimation!!.fillAfter = true;
-        alphaAnimation!!.repeatMode=Animation.INFINITE;
-        findViewById<Button>(R.id.btn).setOnClickListener {
-                        val intent1 = Intent(this, Main2Activity::class.java)
-            startActivity(intent1)
-//            btn.startAnimation(alphaAnimation);
+        btn_ibinder.setOnClickListener {
+            startActivity(Intent(this, IBinderActivity::class.java))
+        }
+        btn_messenger.setOnClickListener {
+            startActivity(Intent(this, MessengerActivity::class.java))
+        }
+        btn_aidl.setOnClickListener {
+            startActivity(Intent(this, AidlTestActivity::class.java))
         }
         Log.d("MainActivity", "onCreate");
     }
@@ -51,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         super.onPause()
         Log.d("MainActivity", "onPause");
     }
+
     override fun onStop() {
         super.onStop()
         Log.d("MainActivity", "onStop");
@@ -65,6 +68,7 @@ class MainActivity : AppCompatActivity() {
         super.onRestoreInstanceState(savedInstanceState)
         Log.d("MainActivity", "onRestoreInstanceState");
     }
+
     override fun onSaveInstanceState(outState: Bundle?) {
         super.onSaveInstanceState(outState)
         Log.d("MainActivity", "onSaveInstanceState");
@@ -74,6 +78,7 @@ class MainActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState, outPersistentState)
         Log.d("MainActivity", "onSaveInstanceState PersistableBundle");
     }
+
     override fun onConfigurationChanged(newConfig: Configuration?) {
         super.onConfigurationChanged(newConfig)
         Log.d("MainActivity", "onConfigurationChanged" + newConfig.toString());

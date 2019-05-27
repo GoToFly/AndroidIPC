@@ -1,4 +1,4 @@
-package com.horry.myapplication
+package com.horry.myapplication.binder
 
 import android.content.ComponentName
 import android.content.Context
@@ -7,6 +7,7 @@ import android.os.IBinder
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
+import com.horry.myapplication.MyBinder
 
 /**
  * Connection是Binder中Android进程间通信的桥梁，将IBinder对象在进程间传输

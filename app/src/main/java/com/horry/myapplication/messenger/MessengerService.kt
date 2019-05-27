@@ -1,4 +1,4 @@
-package com.horry.myapplication
+package com.horry.myapplication.messenger
 
 import android.app.Service
 import android.content.Intent

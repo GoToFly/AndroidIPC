@@ -1,6 +1,7 @@
 package com.horry.myapplication
 
 import android.os.Binder
+import com.horry.myapplication.binder.BindService
 
 /**
  * 继承自Binder
